@@ -1,3 +1,17 @@
+// display today's date
+var currentDay = dayjs();
+$('#currentDay').text(currentDay.format('dddd, MMMM D'));
+
+var saveBtn = $('.saveBtn');
+
+saveBtn.on('click', function () {
+  //set data entered by user from each hour in local storage; can use 'this' to indicate whatever box is filled and saved
+  alert('you just saved ' + $(this).val().trim());
+});
+
+
+
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
