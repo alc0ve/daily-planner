@@ -2,20 +2,19 @@
 var currentDay = dayjs();
 $('#currentDay').text(currentDay.format('dddd, MMMM D'));
 
+//current hour- 24hr clock
+var currentHour = dayjs().hour();
 var saveBtn = $('.saveBtn');
 
-saveBtn.on('click', function () {
-  //set data entered by user from each hour in local storage; can use 'this' to indicate whatever box is filled and saved
-  alert('you just saved ' + $(this).val().trim());
-});
+console.log(currentHour);
 
-
-
-
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-$(function () {
+//make function available after document is loaded
+$(document).ready(function () {
+  console.log("ready");
+  saveBtn.on('click', function () {
+    //set data entered by user from each hour in local storage; can use 'this' to indicate whatever box is filled and saved
+    alert('you just saved ' + $(this).val().trim());
+  });
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
