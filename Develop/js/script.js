@@ -2,26 +2,28 @@
 var currentDay = dayjs();
 $('#currentDay').text(currentDay.format('dddd, MMMM D'));
 
-//current hour- 24hr clock
-var currentHour = dayjs().hour();
-var saveBtn = $('.saveBtn');
-
-console.log(currentHour);
-
 //make function available after document is loaded
 $(document).ready(function () {
-  console.log("ready");
+  //Event for clicking save button
+  var saveBtn = $('.saveBtn');
   saveBtn.on('click', function () {
-    //set data entered by user from each hour in local storage; can use 'this' to indicate whatever box is filled and saved
-    alert('you just saved ' + $(this).val().trim());
+
+    //get values of description written in text
+    var textEnter = $(this).siblings('.description').val();
+
+    //id of hour-x using DOM traversal
+    var time = $(this).parent().attr('id');
+
+    //set variables into local storage; (key,value)
+    localStorage.setItem(time, textEnter);
   });
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  //
+
+  function trackTime() {
+    //current hour- 24hr clock
+    var currentHour = dayjs().hour();
+  }
+
+
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
   // attribute of each time-block be used to conditionally add or remove the
