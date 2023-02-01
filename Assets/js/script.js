@@ -10,7 +10,6 @@ $(document).ready(function () {
 
     //get values of description written in text
     var textEnter = $(this).siblings('.description').val();
-    //look up textarea vs input
 
     //id of hour-x using DOM traversal
     var time = $(this).parent().attr('id');
@@ -24,13 +23,11 @@ $(document).ready(function () {
     var currentHour = dayjs().hour();
     console.log(currentHour);
 
+    //with TA help
     $('.time-block').each(function () {
-      //split is removing the -
-      //hour 9, [1] selects the 9
       var myHour = parseInt($(this).attr("id").split("-")[1]);
-      console.log(myHour);
 
-      if (currentHour < myHour) {
+      if (currentHour > myHour) {
         //add past
         $(this).addClass('past');
       } else if (currentHour === myHour) {
@@ -44,28 +41,20 @@ $(document).ready(function () {
         $(this).addClass('future');
       }
     })
-
-
-    //i=8 since calendar starts at 9am
-    //jquery for loop
-    // for (i=8; i<18; i++)
   }
 
+  //better call that fx!
   trackTime();
-  var timer = setInterval(trackTime, 15000);
 
-  console.log(timer);
+  //GET from localStorage, id attr for each time block
+$('#hour-9 .description').val(localStorage.getItem('hour-9'));
+$('#hour-10 .description').val(localStorage.getItem('hour-10'));
+$('#hour-11 .description').val(localStorage.getItem('hour-11'));
+$('#hour-12 .description').val(localStorage.getItem('hour-12'));
+$('#hour-13 .description').val(localStorage.getItem('hour-13'));
+$('#hour-14 .description').val(localStorage.getItem('hour-14'));
+$('#hour-15 .description').val(localStorage.getItem('hour-15'));
+$('#hour-16 .description').val(localStorage.getItem('hour-16'));
+$('#hour-17 .description').val(localStorage.getItem('hour-17'));
 
-
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
 });

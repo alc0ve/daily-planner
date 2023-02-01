@@ -6,13 +6,11 @@ This is a simple calendar application where a 9-5 employee can utilize to jot do
 
 ## Installation
 
-A starter code was provided with the basic layout design. The functionality of the planner is made available once the page is loaded. The current date is displayed at the top. I started with adding a click event to the save button. The id in the time-block was used to pull whatever time the user put their events in. DOM traversal was used to pull specific data in terms of the value in the text box, and what time the user chooses to store in local storage. 
+A starter code was provided with the basic layout design. The functionality of the planner is made available once the page is loaded. The current date is displayed at the top. I started with adding a click event to the save button. The id in the time-block was used to pull whatever time the user put their events in. DOM traversal was used to pull specific data in terms of the value in the text box, and what time the user chooses to store in local storage. I had a TA help with "for loop" in jQuery form and she helped me with color coding for each hour. Then, I had to figure out how to pull from local storage whatever the user types into the planner so that the content stays in the boxes if the page is refreshed.
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
+Anyone needing a 9-5 planner can use this app to jot down important tasks to do during those hours of the day. The time blocks will change according to the current time in the day, gray showing past, red showing present time, and green for future time. The user can type directly into the boxes and will keep that information even when the page is refreshed.
 
 ![alt text](assets/images/screenshot.png)
 
@@ -20,26 +18,6 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 For date and time, the app uses the [Day.js](https://day.js.org/en/) library.
 
+For my time tracker and changing colors of the boxes for every hour, I had a TA Sandra S., help me out and clean up my code. Thanks!
 
-
-
-
-
-## Acceptance Criteria
-
-```md
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
 
