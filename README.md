@@ -12,7 +12,11 @@ A starter code was provided with the basic layout design. The functionality of t
 
 Anyone needing a 9-5 planner can use this app to jot down important tasks to do during those hours of the day. The time blocks will change according to the current time in the day, gray showing past, red showing present time, and green for future time. The user can type directly into the boxes and will keep that information even when the page is refreshed.
 
-![alt text](assets/images/screenshot.png)
+![alt text](./Assets/images/Screenshot-daily-planner-app.png)
+
+Link to page: https://alc0ve.github.io/daily-planner/
+
+GitHub: https://github.com/alc0ve/daily-planner
 
 ## Credits
 
